@@ -5,7 +5,7 @@
     <application android:allowBackup="true" android:label="@string/app_name"
         android:supportsRtl="true">
         <activity
-            android:name=".DialogActivity"
+            android:name=".ui.DialogActivity"
             android:theme="@style/DialogActivity"
             />
     </application>

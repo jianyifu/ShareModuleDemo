@@ -1,6 +1,6 @@
 package com.fjy.sharemoduledemo;
 
-import com.fjy.sharelib.ShareItem;
+import com.fjy.sharelib.model.DataSource;
 import com.google.gson.Gson;
 
 import java.io.Serializable;
@@ -9,7 +9,7 @@ import java.io.Serializable;
  * Created by fujia on 2017/8/5.
  */
 
-public class GameInfo implements Serializable ,ShareItem{
+public class GameInfo implements Serializable ,DataSource {
     private long id;
     private String name;
     private String playUrl;

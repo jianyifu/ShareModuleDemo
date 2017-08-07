@@ -6,22 +6,22 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 
-import com.fjy.sharelib.DialogActivity;
-import com.fjy.sharelib.ShareItem;
+import com.fjy.sharelib.model.DataSource;
+import com.fjy.sharelib.ui.DialogActivity;
 
 /**
  * Created by fujia on 2017/8/5.
  */
 
-public class ShareUtil {
-    private static final String TAG = "ShareUtil";
+public class ShareCore {
+    private static final String TAG = "ShareCore";
     public static final String KEY_SHARE_BUNDLE = "key_share_bundle";
     public static final String KEY_SHARE_URL_QQ = "key_share_url_qq";
     public static final String KEY_SHARE_URL_QZONE = "key_share_url_qzone";
     public static final String KEY_SHARE_URL_WECHAT = "key_share_url_wechat";
     public static final String KEY_SHARE_URL_WEIBO = "key_share_url_weibo";
 
-    public static void showShareDialog(Context context, ShareItem item) {
+    public static void showShareDialog(Context context, DataSource item) {
         if (context != null && item != null) {
             Intent intent = new Intent(context, DialogActivity.class);
             Bundle bundle = new Bundle();
@@ -34,10 +34,10 @@ public class ShareUtil {
     /**
      * share to QQ or Qzone
      * @param activity
-     * @param shareItem
+     * @param dataSource
      * @param shareType
      */
-//    private static void shareQorZ(Activity activity, ShareItem shareItem, IShareManager.ShareType shareType) {
+//    private static void shareQorZ(Activity activity, DataSource dataSource, IShareManager.ShareType shareType) {
 ////        ShareData shareData = gameInfo.getShareData();
 //        ShareManagerFactory factory = ShareManagerFactory.getInstance(activity);
 //        AppidObject appidObject = new AppidObject();
@@ -87,7 +87,7 @@ public class ShareUtil {
      *
      * @param activity
      */
-    public static void shareImageTextToQQ(Activity activity, ShareItem item) {
+    public static void shareImageTextToQQ(Activity activity, DataSource item) {
         //TODO revoke
 //        shareQorZ(activity, item, IShareManager.ShareType.SHARE_TO_QQ_TYPE_IMAGE_TEXT);
     }
@@ -97,11 +97,11 @@ public class ShareUtil {
      *
      * @param activity
      */
-    public static void shareImageTextToQZone(Activity activity, ShareItem item) {
+    public static void shareImageTextToQZone(Activity activity, DataSource item) {
 //        shareQorZ(activity, item, IShareManager.ShareType.SHARE_TO_QZONE_TYPE_IMAGE_TEXT);
     }
 
-    private static void shareWorT(Activity activity, ShareItem item, byte[] thumbByte, boolean weatherTimeline) {
+    private static void shareWorT(Activity activity, DataSource item, byte[] thumbByte, boolean weatherTimeline) {
 //        ShareManagerFactory factory = ShareManagerFactory.getInstance(activity);
 //        AppidObject appidObject = new AppidObject();
 //        appidObject.appid = Constants.WEIXIN_CLIENT_ID;
@@ -144,7 +144,7 @@ public class ShareUtil {
      *
      * @param activity
      */
-    public static void shareImageTextToWC(Activity activity, ShareItem item, byte[] thumbByte) {
+    public static void shareImageTextToWC(Activity activity, DataSource item, byte[] thumbByte) {
         shareWorT(activity, item, thumbByte, false);
     }
 
@@ -153,11 +153,11 @@ public class ShareUtil {
      *
      * @param activity
      */
-    public static void shareImageTextToWCTimeline(Activity activity, ShareItem item, byte[] thumbByte) {
+    public static void shareImageTextToWCTimeline(Activity activity, DataSource item, byte[] thumbByte) {
         shareWorT(activity, item, thumbByte, true);
     }
 
-    public static void shareWebTextToWeibo(Activity activity,ShareItem item, Bitmap thumbBitmap) {
+    public static void shareWebTextToWeibo(Activity activity, DataSource item, Bitmap thumbBitmap) {
 //        AppidObject object = new AppidObject();
 //        object.appid = Constants.WEIBO_CLIENT_ID;
 //        object.redirectUrl = PassportConstant.REDIRECT_URL_FOR_WEIBO;

@@ -1,4 +1,4 @@
-package com.fjy.sharelib;
+package com.fjy.sharelib.model;
 
 import java.io.Serializable;
 
@@ -6,7 +6,7 @@ import java.io.Serializable;
  * Created by fujia on 2017/8/5.
  */
 
-public interface  ShareItem extends Serializable {
+public interface DataSource extends Serializable {
     String getTitle();
     String getSubTitle();
     String getImgUrl();
